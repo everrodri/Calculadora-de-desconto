@@ -1,0 +1,26 @@
+/*Estilização*/
+body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(138, 235, 138);
+    
+}
+h2 {
+    font-size: 20px;
+}
+
+div {
+    background-color: white;
+    width: 80%;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+
+main label {
+    display: inline-block;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caculadora</title>
+    <script src="caculadora.js"></script>
+    <link rel="stylesheet" href="estile.css">
+</head>
+
+<body>
+    <div>
+        <header>
+
+            <!--cabecalho-->
+
+            <h1>Calculadora de Desconto</h1>
+            <h2>Calcule desconto para criar promoções e aumentar as vendas do seu e-commerce</h2>
+        </header>
+        <main>
+            <!--corpo-->
+
+            <label for="valor">Valor Original:</label>
+            <input type="number" id="valor"><br>
+            <label for="desconto">Desconto(%):</label>
+            <input type="number" id="desconto">
+
+
+            <!--interacao-->
+
+            <section>
+                <p id="valordesconto"></p>
+                <p id="resultado"></p>
+                <button type="button" onclick="calcularDesconto()">Calcular</button>
+            </section>
+        </main>
+        <footer>
+            <!--rodape-->
+            <p>Everton Rodrigues&copy; 2026</p><br>
+            <a href="#">GitHub</a><br>
+            <a href="#">Linkedin</a>
+        </footer>
+    </div>
+</body>
+
+</html>
