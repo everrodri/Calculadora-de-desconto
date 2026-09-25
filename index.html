@@ -5,44 +5,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caculadora</title>
-    <script src="caculadora.js"></script>
-    <link rel="stylesheet" href="estile.css">
+<link rel="shortcut icon" href="Calculator.ico" type="image/x-icon">
+<style>
+    body {
+    font-family: 'Courier New', Courier, monospace;
+    margin: auto;
+    text-align: center;
+    background-color: rgb(138, 235, 138);
+    
+}
+
+h2 {
+    font-size: 20px;
+}
+
+div#principal {
+    background-color: white;
+    width: 80%;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+
+}
+div#saidaDesconto {
+    margin-top: 1.5%;
+}
+
+input {
+    margin-top: 1.5%;
+}
+
+p {
+    display: inline;
+    margin-bottom: 30px;
+}
+footer {
+    margin-top: 10%;
+}
+</style>
 </head>
 
 <body>
-    <div>
+    <div id="principal">
         <header>
-
             <!--cabecalho-->
-
             <h1>Calculadora de Desconto</h1>
             <h2>Calcule desconto para criar promoções e aumentar as vendas do seu e-commerce</h2>
         </header>
         <main>
             <!--corpo-->
-
-            <label for="valor">Valor Original:</label>
-            <input type="number" id="valor"><br>
-            <label for="desconto">Desconto(%):</label>
-            <input type="number" id="desconto">
-
-
+            <input type="number" id="valor" placeholder="Valor total"><br>
+            <input type="number" id="desconto" placeholder="Desconto(%)"><br>
+            <input type="button" value="Calcular" onclick="saidaDes()">
             <!--interacao-->
-
             <section>
-                <p>Desconto em reais: </p>
-                <p id="valordesconto"></p><br>
-                <p>Preço final com desconto: </p>
-                <p id="resultado"></p><br>
-                <button type="button" onclick="calcularDesconto()">Calcular</button>
+                <div id="saidaDesconto"></div>
+                <div id="saidaTotal"></div>
             </section>
         </main>
         <footer>
             <!--rodape-->
             <p>Everton Rodrigues&copy; 2026</p><br>
-            <a href="#">GitHub</a><br>
+            <a href="https://github.com/dashboard">GitHub</a><br>
             <a href="#">Linkedin</a>
         </footer>
+        <script>
+            function saidaDes(){
+                //extração
+                let vTotal = window.document.getElementById('valor')
+                let vDesconto = window.document.getElementById('desconto')
+                //conversão
+                let conversaoTotal = Number(vTotal.value)
+                let conversaoDesconto = Number(vDesconto.value)
+                //calculo
+                let valorDesconto = (conversaoTotal * conversaoDesconto) / 100
+                let valorFinal = conversaoTotal - valorDesconto
+                saidaDesconto.innerHTML = `O desconto é de ${valorDesconto.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`
+                saidaTotal.innerHTML = `O valor total a ser pago é de ${valorFinal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`
+            }
+
+        </script>
     </div>
 </body>
 
